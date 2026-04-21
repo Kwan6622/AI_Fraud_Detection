@@ -105,15 +105,13 @@ fraud_ai/
 
 ## Installation & Usage
 
-### 1. Install Dependencies
-```bash
+1. Install Dependencies
 pip install -r requirements.txt
 2. Train the Model
 python train.py
 3. Run the API
 python -m uvicorn app:app --reload
 4. Open Interactive Docs
-
 http://127.0.0.1:8000/docs
 
 API Specification
