@@ -1,10 +1,10 @@
-# 🚨 End-to-End AI Fraud Detection System
+# End-to-End AI Fraud Detection System
 
 A production-oriented **real-time credit card fraud detection system** that demonstrates the full machine learning lifecycle — from data preprocessing to API deployment and database logging.
 
 ---
 
-## 📌 Overview
+## Overview
 
 This project is built with a **"Safety-First" philosophy**, prioritizing fraud detection (**high recall**) to minimize financial loss.
 
@@ -16,35 +16,35 @@ It showcases strong engineering practices expected in real-world AI systems:
 
 ---
 
-## ⚙️ Key Features
+## Key Features
 
-### 🧠 Production-Ready AI
+### Production-Ready AI
 - Optimized for **high Recall (Fraud class)**
 - Designed to minimize **false negatives** (missed fraud)
 
-### 🧹 Robust Preprocessing
+### Robust Preprocessing
 - Train/Test split **before scaling**
 - Eliminates **data leakage** (common junior mistake)
 
-### ⚡ Real-Time Inference API
+### Real-Time Inference API
 - Built with **FastAPI**
 - Supports **high concurrency** and **low latency**
 
-### 🗄️ Automated Data Logging
+### Automated Data Logging
 - Uses **SQLAlchemy (ORM)**
 - Stores:
   - Transaction data
   - Prediction results
   - Fraud probability
 
-### 🚀 Performance Optimization
+### Performance Optimization
 - Uses **FastAPI BackgroundTasks**
 - Database writes are **asynchronous**
 - Keeps API response time **fast**
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 ### Machine Learning
 - Python
@@ -64,7 +64,7 @@ It showcases strong engineering practices expected in real-world AI systems:
 
 ---
 
-## 📊 Model Performance
+## Model Performance
 
 Trained on the **Kaggle Credit Card Fraud Detection dataset**  
 (Highly imbalanced: ~99.8% legitimate transactions)
@@ -75,28 +75,35 @@ Trained on the **Kaggle Credit Card Fraud Detection dataset**
 | Recall     | 0.97            | 0.93            |
 | F1-Score   | 0.98            | 0.08            |
 
-### 🔍 Analysis
-- ✅ **93% Recall** → Most fraudulent transactions are detected  
-- ⚠️ **Low Precision (0.04)** → More false positives  
-- 🎯 Trade-off is intentional: better to **flag suspicious transactions** than miss fraud  
+### Analysis
+- **93% Recall** → Most fraudulent transactions are detected  
+- **Low Precision (0.04)** → More false positives  
+- Trade-off is intentional: better to **flag suspicious transactions** than miss fraud  
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 
 fraud_ai/
+
 ├── data/ # Raw dataset (creditcard.csv)
+
 ├── models/ # Serialized model and scaler (.pkl)
+
 ├── train.py # Training, evaluation, export
+
 ├── app.py # FastAPI server + SQL logging
+
 ├── requirements.txt # Dependencies
+
 └── fraud_history.db # Auto-generated database
+
 
 
 ---
 
-## 🚀 Installation & Usage
+## Installation & Usage
 
 ### 1. Install Dependencies
 ```bash
@@ -109,14 +116,16 @@ python -m uvicorn app:app --reload
 
 http://127.0.0.1:8000/docs
 
-🔌 API Specification
+API Specification
 Endpoint
 POST /predict
-📥 Request Body
+
+Request Body
 {
   "data": [0.0, -1.35, 1.1, -1.2, ..., 149.62]
 }
-📤 Response
+
+Response
 {
   "is_fraud": 1,
   "fraud_probability": 0.9325,
